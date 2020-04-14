@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace WpfApp1
 {
@@ -20,6 +21,7 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static System.Timers.Timer aTimer;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,6 +39,12 @@ namespace WpfApp1
             Sendmail sendmail1 = new Sendmail("legitminecraft143@gmail.com",to);
             sendmail1.send();
             
+        }
+
+        private void timerbutton_Click(object sender, RoutedEventArgs e)
+        {
+            Timer timer1 = new Timer();
+            timer1.SetTimer(aTimer);
         }
     }
 }
