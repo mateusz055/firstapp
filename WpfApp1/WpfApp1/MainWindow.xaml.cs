@@ -24,5 +24,19 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string to = mailbox.Text;
+            Sendmail sendmail1 = new Sendmail("legitminecraft143@gmail.com",to);
+            sendmail1.send();
+            
+        }
     }
 }

@@ -7,8 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="400">
     <Grid>
-        <Image Source="background.jpg" Margin="0,0,0.333,-0.333"  />
-        <Button Content="Button" HorizontalAlignment="Left" Margin="115,191,0,0" VerticalAlignment="Top" Width="156" Height="33"/>
+        <Image Source="C:\Users\Mateusz\Desktop\app\WpfApp1\WpfApp1\images\background.jpg" Margin="0,0,0.333,-0.333" Stretch="Fill" />
+        <Button Content="send" HorizontalAlignment="Left" Margin="115,191,0,0" VerticalAlignment="Top" Width="156" Height="33" Click="Button_Click_1">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="CadetBlue"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <TextBox x:Name="mailbox"  HorizontalAlignment="Left" Height="20" Margin="115,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" RenderTransformOrigin="-0.214,-0.014"/>
+        <Button Content="hide" HorizontalAlignment="Left" Margin="167,266,0,0" VerticalAlignment="Top" Width="56" Height="31" Click="Button_Click"/>
 
     </Grid>
 </Window>
