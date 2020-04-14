@@ -21,9 +21,11 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string milisecondtime;
         public static System.Timers.Timer aTimer;
         public MainWindow()
         {
+            
             InitializeComponent();
         }
 
@@ -44,7 +46,20 @@ namespace WpfApp1
         private void timerbutton_Click(object sender, RoutedEventArgs e)
         {
             Timer timer1 = new Timer();
-            timer1.SetTimer(aTimer);
+            timer1.SetTimer(aTimer,milisecondtime);
+        }
+        
+
+        private void lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+                ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
+            milisecondtime = lbi.Content.ToString();
+        }
+
+        private void tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

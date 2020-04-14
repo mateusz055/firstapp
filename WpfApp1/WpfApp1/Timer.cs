@@ -11,15 +11,15 @@ namespace WpfApp1
     class Timer
     {
 
-        public static System.Timers.Timer tmpTimer;
+        
 
-        public void SetTimer(System.Timers.Timer aTimer)
+        public void SetTimer(System.Timers.Timer aTimer,string milisecondtime)
         {
-            tmpTimer = aTimer;
-            tmpTimer = new System.Timers.Timer(5000);
-            tmpTimer.Elapsed += OnTimedEvent;
-            tmpTimer.AutoReset = true;
-            tmpTimer.Enabled = true;
+            int milisecondtimeint = Int32.Parse(milisecondtime);
+            aTimer = new System.Timers.Timer(milisecondtimeint);
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
         }
 
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
