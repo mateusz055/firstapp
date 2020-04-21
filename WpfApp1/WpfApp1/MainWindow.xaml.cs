@@ -23,6 +23,7 @@ namespace WpfApp1
     {
         string milisecondtime;
         public static System.Timers.Timer aTimer;
+        Timer timer1 = new Timer();
         public MainWindow()
         {
             
@@ -45,8 +46,9 @@ namespace WpfApp1
 
         private void timerbutton_Click(object sender, RoutedEventArgs e)
         {
-            Timer timer1 = new Timer();
+            timer1.StopTimer(aTimer);
             timer1.SetTimer(aTimer,milisecondtime);
+            
         }
         
 

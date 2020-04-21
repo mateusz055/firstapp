@@ -21,7 +21,21 @@ namespace WpfApp1
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
         }
+        public void StopTimer(System.Timers.Timer aTimer)
+        {
+            try
+            {
+                aTimer.Enabled = false;
+            }
+            catch(NullReferenceException e)
+            {
 
+            }
+            
+            
+
+
+        }
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             MessageBox.Show("ffds");
