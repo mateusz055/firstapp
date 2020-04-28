@@ -10,22 +10,25 @@ namespace WpfApp1
 {
     class Timer
     {
-
+        public static System.Timers.Timer aTimer;
         
 
-        public void SetTimer(System.Timers.Timer aTimer,string milisecondtime)
+        public void SetTimer(string milisecondtime)
         {
+           
             int milisecondtimeint = Int32.Parse(milisecondtime);
             aTimer = new System.Timers.Timer(milisecondtimeint);
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
+            
         }
-        public void StopTimer(System.Timers.Timer aTimer)
+        public void StopTimer()
         {
             try
             {
-                aTimer.Enabled = false;
+                aTimer.Stop();
+                aTimer.Dispose();
             }
             catch(NullReferenceException e)
             {

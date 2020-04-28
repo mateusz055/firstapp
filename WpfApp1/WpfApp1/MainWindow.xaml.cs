@@ -22,7 +22,6 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         string milisecondtime;
-        public static System.Timers.Timer aTimer;
         Timer timer1 = new Timer();
         public MainWindow()
         {
@@ -41,13 +40,14 @@ namespace WpfApp1
             string to = mailbox.Text;
             Sendmail sendmail1 = new Sendmail("legitminecraft143@gmail.com",to);
             sendmail1.send();
-            
+            Effect effect1 = new Effect();
+            effect1.Play(); 
         }
 
         private void timerbutton_Click(object sender, RoutedEventArgs e)
         {
-            timer1.StopTimer(aTimer);
-            timer1.SetTimer(aTimer,milisecondtime);
+            timer1.StopTimer();
+            timer1.SetTimer(milisecondtime);
             
         }
         
@@ -63,5 +63,6 @@ namespace WpfApp1
         {
 
         }
+
     }
 }
