@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace WpfApp1
 {
@@ -20,9 +21,48 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string milisecondtime;
+        Timer timer1 = new Timer();
         public MainWindow()
         {
+            
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string to = mailbox.Text;
+            Sendmail sendmail1 = new Sendmail("legitminecraft143@gmail.com",to);
+            sendmail1.send();
+            Effect effect1 = new Effect();
+            effect1.Play(); 
+        }
+
+        private void timerbutton_Click(object sender, RoutedEventArgs e)
+        {
+            timer1.StopTimer();
+            timer1.SetTimer(milisecondtime);
+            
+        }
+        
+
+        private void lb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+                ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
+            milisecondtime = lbi.Content.ToString();
+        }
+
+        private void tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }

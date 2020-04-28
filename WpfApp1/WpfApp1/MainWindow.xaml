@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="400" Width="400">
+    <Grid Margin="0,0,3.333,-0.333">
+        <Image Source="C:\Users\Mateusz\Desktop\app\WpfApp1\WpfApp1\images\background.jpg" Margin="0,0,0.333,-0.333" Stretch="Fill" />
+        <Button Content="send" HorizontalAlignment="Left" Margin="115,191,0,0" VerticalAlignment="Top" Width="156" Height="33" Click="Button_Click_1">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="CadetBlue"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <TextBox x:Name="mailbox"  HorizontalAlignment="Left" Height="20" Margin="115,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" RenderTransformOrigin="-0.214,-0.014"/>
+        <Button Content="hide" HorizontalAlignment="Left" Margin="167,266,0,0" VerticalAlignment="Top" Width="56" Height="31" Click="Button_Click"/>
+        <Button x:Name="timerbutton" Content="timer" HorizontalAlignment="Left" Margin="162,111,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.222,2.29" Height="26" Click="timerbutton_Click"/>
+        <ListBox x:Name="lb" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="204" Margin="92,33,0,0" SelectionChanged="lb_SelectionChanged">
+            <ListBoxItem>5000</ListBoxItem>
+            <ListBoxItem>10000</ListBoxItem>
+            <ListBoxItem>15000</ListBoxItem>
+            <ListBoxItem>20000</ListBoxItem>
+            <ListBoxItem>25000</ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>
